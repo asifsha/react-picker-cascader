@@ -1,0 +1,42 @@
+
+  .pc-list-wrapper {
+    position: relative;    
+  }
+
+  .pc-list {
+    border: 1px grey solid;
+    display : flex;
+    z-index: 10;
+    position: absolute;
+    flex-direction: column;
+    padding: 0.25rem;    
+    background-color: white;
+  }
+
+  .pc-history-list {
+    vertical-align: middle;
+    font-size: x-small
+  }
+
+  .pc-search-container {      
+    margin-bottom: 1rem
+  }
+
+  .pc-icon {
+    padding: 0.5rem;
+    min-width: 2rem;
+    position: absolute;
+    color: grey;
+  }
+
+  .pc-search-field {
+    width: calc(100% - 2.8rem);
+    padding: 0.5rem;
+    padding-left: 2rem;
+  }
+
+  .pc-dropdown-icon {
+    vertical-align: middle;
+    float: right;
+    color: black;
+  }
