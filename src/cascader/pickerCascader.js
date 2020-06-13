@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaCaretDown, FaCaretRight, FaCaretUp, FaSearch } from "react-icons/fa";
+import PropTypes from 'prop-types';
 
 import "./pickerCascader.css";
 
@@ -255,4 +256,11 @@ PickerCascader.defaultProps = {
   style: {
     width: "20rem"
   }
+};
+
+PickerCascader.propTypes = {
+  data: PropTypes.object,
+  onValueSelected: PropTypes.func,
+  style: PropTypes.object,
+  placeHolder : PropTypes.string
 };

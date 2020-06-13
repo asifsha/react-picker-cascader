@@ -6,16 +6,17 @@
   "scripts": {
     "start": "webpack --watch",
     "build": "webpack",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "peerDependencies": {
-    "react": "^16.4.0"
+    "react": "^16.4.0",
+    "react-dom": "^16.9.0",
+    "react-icons": "^3.8.0"
   },
   "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-icons": "^3.8.0",
-    "react-scripts": "3.1.1"
+    "react": "^16.9.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
@@ -23,11 +24,15 @@
     "@babel/preset-env": "^7.10.2",
     "@testing-library/react": "^10.2.1",
     "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.1.0",
     "babel-jest": "^26.0.1",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "css-loader": "^0.23.1",
+    "eslint": "^7.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-react": "^7.20.0",
     "identity-obj-proxy": "^3.0.0",
     "style-loader": "^0.13.0",
     "webpack": "^4.43.0",
@@ -48,5 +53,9 @@
       "\\.css$": "identity-obj-proxy",
       "^lodash-es$": "lodash"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asifsha/react-picker-cascader.git"
   }
 }

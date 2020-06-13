@@ -78,7 +78,7 @@ it("renders without crashing", () => {
   ReactDOM.render(
     <PickerCascader
       data={pcData}
-      onValueSelected={item => console.log(item)}
+      onValueSelected={item => {}}
     />,
     div
   );
@@ -86,7 +86,7 @@ it("renders without crashing", () => {
 });
 
 it("verify items selection and parent navigation", done => {
-  const { getByText, getByTestId, container, debug } = render(
+  const { getByText, container } = render(
     <PickerCascader data={pcData} onValueSelected={item => done()} />
   );
 
@@ -131,7 +131,7 @@ it("verify items selection and parent navigation", done => {
 });
 
 it("verify search", done => {
-  const { getByText, getByTestId, container, debug } = render(
+  const { getByText, getByTestId, container } = render(
     <PickerCascader data={pcData} onValueSelected={item => done()} />
   );
 
