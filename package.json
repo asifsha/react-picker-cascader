@@ -54,7 +54,7 @@
   "author": "asif sharif",
   "license": "ISC",
   "jest": {
-    "testEnvironment": "node",
+    "testEnvironment": "jsdom",
     "moduleNameMapper": {
       "\\.css$": "identity-obj-proxy",
       "^lodash-es$": "lodash"
