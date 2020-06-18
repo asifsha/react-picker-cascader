@@ -58,7 +58,7 @@
     "moduleNameMapper": {
       "\\.css$": "identity-obj-proxy",
       "^lodash-es$": "lodash"
-    }
+    }    
   },
   "repository": {
     "type": "git",

@@ -3,13 +3,6 @@ import ReactDOM from "react-dom";
 import PickerCascader from "../index";
 import { render, fireEvent } from "@testing-library/react";
 import { describe, expect, it } from "@jest/globals";
-import jsdom from 'jsdom';
-
-const { JSDOM } = jsdom;
-
-const { window } = new JSDOM();
-const { document } = window;
-global.document = document;
 
 
 const pcData = [
