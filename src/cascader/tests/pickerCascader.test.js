@@ -2,6 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import PickerCascader from "../index";
 import { render, fireEvent } from "@testing-library/react";
+import { describe, expect, it } from "@jest/globals";
+import jsdom from 'jsdom';
+
+const { JSDOM } = jsdom;
+
+const { window } = new JSDOM();
+const { document } = window;
+global.document = document;
 
 
 const pcData = [
@@ -73,17 +81,24 @@ const pcData = [
   }
 ];
 
-it("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(
-    <PickerCascader
-      data={pcData}
-      onValueSelected={item => {}}
-    />,
-    div
-  );
-  ReactDOM.unmountComponentAtNode(div);
+/**
+ * @jest-environment jsdom
+ */
+
+describe("test render", () => {
+  it("renders without crashing", () => {
+    const div = document.createElement("div");
+    ReactDOM.render(
+      <PickerCascader data={pcData} onValueSelected={item => {}} />,
+      div
+    );
+    ReactDOM.unmountComponentAtNode(div);
+    const { container } = render(
+      <PickerCascader data={pcData} onValueSelected={item => done()} />
+    );
+  });
 });
+
 
 it("verify items selection and parent navigation", done => {
   const { getByText, container } = render(
@@ -138,8 +153,8 @@ it("verify search", done => {
   const dropdown = container.querySelector(".pc-text-panel");
   fireEvent.click(dropdown);
 
-  const searchElem = getByTestId("pc-search-field");  
-  fireEvent.change(searchElem, { target: { value: 'sydney' } })
+  const searchElem = getByTestId("pc-search-field");
+  fireEvent.change(searchElem, { target: { value: "sydney" } });
 
   const text = getByText("Australia | New South Wales | Sydney");
   expect(text).toBeTruthy();

@@ -259,7 +259,7 @@ PickerCascader.defaultProps = {
 };
 
 PickerCascader.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.array,
   onValueSelected: PropTypes.func,
   style: PropTypes.object,
   placeHolder : PropTypes.string
