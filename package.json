@@ -25,6 +25,8 @@
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
+    "@testing-library/dom": "^7.16.2",
+    "@testing-library/jest-dom": "^5.10.1",
     "@testing-library/react": "^10.2.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
@@ -58,7 +60,11 @@
     "moduleNameMapper": {
       "\\.css$": "identity-obj-proxy",
       "^lodash-es$": "lodash"
-    }    
+    },
+    "globals": {
+      "window": true,
+      "document": true
+    }
   },
   "repository": {
     "type": "git",

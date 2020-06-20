@@ -1,8 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import PickerCascader from "../index";
 import { render, fireEvent } from "@testing-library/react";
-import { describe, expect, it } from "@jest/globals";
+import { describe, expect, it, beforeAll } from "@jest/globals";
 
 
 const pcData = [
@@ -74,9 +73,14 @@ const pcData = [
   }
 ];
 
-/**
- * @jest-environment jsdom
- */
+
+
+beforeAll(() => {
+  const spyFunc = jest.fn();
+  Object.defineProperty(global, "document", { value: spyFunc });
+  const sypEventHandler = jest.fn();
+  global.document.addEventListener = sypEventHandler;
+});
 
 describe("test render", () => {
   it("renders without crashing", () => {
@@ -91,7 +95,6 @@ describe("test render", () => {
     );
   });
 });
-
 
 it("verify items selection and parent navigation", done => {
   const { getByText, container } = render(
