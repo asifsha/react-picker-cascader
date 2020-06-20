@@ -84,13 +84,7 @@ beforeAll(() => {
 });
 
 describe("test render", () => {
-  it("renders without crashing", () => {
-    const div = document.createElement("div");
-    ReactDOM.render(
-      <PickerCascader data={pcData} onValueSelected={item => {}} />,
-      div
-    );
-    ReactDOM.unmountComponentAtNode(div);
+  it("renders without crashing", () => {    
     const { container } = render(
       <PickerCascader data={pcData} onValueSelected={item => done()} />
     );
