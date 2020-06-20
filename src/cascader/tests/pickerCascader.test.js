@@ -80,6 +80,7 @@ beforeAll(() => {
   Object.defineProperty(global, "document", { value: spyFunc });
   const sypEventHandler = jest.fn();
   global.document.addEventListener = sypEventHandler;
+  global.document.createElement = jest.fn();
 });
 
 describe("test render", () => {
