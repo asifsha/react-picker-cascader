@@ -2,7 +2,7 @@
   "name": "r-picker-cascader",
   "version": "1.0.5",
   "description": "React Picker Cascader Dropdown",
-  "main": "src/cascader.index.js",
+  "main": "build/index.js",
   "scripts": {
     "start": "webpack --watch",
     "build": "webpack",
@@ -11,13 +11,11 @@
     "lint:fix": "eslint --fix ."
   },
   "peerDependencies": {
-    "react": "^16.4.0",
+    "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-icons": "^3.8.0"
   },
   "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
     "react-icons": "^3.8.0"
   },
   "devDependencies": {
