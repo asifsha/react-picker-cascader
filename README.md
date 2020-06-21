@@ -5,7 +5,7 @@ React Picker Cascader Dropdown
 ## Installation
 
 ```
-npm install --save react-picker-cascader
+npm install --save r-picker-cascader
 ```
 
 ## How to Use
@@ -101,7 +101,7 @@ https://picker-cascader-demo.herokuapp.com
 
 
 ## npm
-https://www.npmjs.com/package/react-picker-cascader
+https://www.npmjs.com/package/r-picker-cascader
 
 ## Developed By
 Asif Sharif
