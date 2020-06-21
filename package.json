@@ -1,6 +1,6 @@
 {
   "name": "r-picker-cascader",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "React Picker Cascader Dropdown",
   "main": "build/index.js",
   "scripts": {
