@@ -1,6 +1,6 @@
 {
   "name": "r-picker-cascader",
-  "version": "1.0.12",
+  "version": "1.0.14",
   "description": "React Picker Cascader Dropdown",
   "main": "build/index.js",
   "scripts": {
@@ -50,7 +50,7 @@
     "ui-component"
   ],
   "author": "asif sharif",
-  "license": "ISC",
+  "license": "MIT",
   "jest": {
     "testEnvironment": "jsdom",
     "moduleNameMapper": {

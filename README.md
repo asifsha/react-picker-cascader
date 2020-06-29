@@ -97,7 +97,7 @@ https://picker-cascader-demo.herokuapp.com
 | prop | Description |
 | --- | --- |
 | data | Datasource for control, JavaScript object, if you want to bind json use json.Parse() to convert to JS object |
-| onValueChange | Event, will give you selected item, key as '~' separated and values as \| separated |
+| onValueSelected | Event, will give you selected item, key as '~' separated and values as \| separated |
 
 
 ## npm
