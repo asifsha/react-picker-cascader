@@ -1,9 +1,9 @@
 import React from "react";
 import PickerCascader from "../index";
 import { expect, it } from "@jest/globals";
+import { render, fireEvent } from "@testing-library/react";
 
-import renderer from 'react-test-renderer'
-
+import renderer from "react-test-renderer";
 
 const pcData = [
   {
@@ -75,12 +75,83 @@ const pcData = [
 ];
 
 /*global done : true*/
-it('renders correctly with data', () => {
-  const tree = renderer.create(<PickerCascader data={pcData} onValueSelected={() => done()} />).toJSON();
+it("renders correctly with data", () => {
+  const tree = renderer
+    .create(<PickerCascader data={pcData} onValueSelected={() => done()} />)
+    .toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-it('renders correctly without data', () => {
-  const tree = renderer.create(<PickerCascader data={[]} onValueSelected={() => done()} />).toJSON();
+it("renders correctly without data", () => {
+  const tree = renderer
+    .create(<PickerCascader data={[]} onValueSelected={() => done()} />)
+    .toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+
+it("renders without crashing", () => {
+  render(<PickerCascader data={pcData} onValueSelected={() => done()} />);
+});
+
+it("verify items selection and parent navigation", done => {
+  const { getByText, container } = render(
+    <PickerCascader data={pcData} onValueSelected={() => done()} />
+  );
+
+  const dropdown = container.querySelector(".pc-text-panel");
+  fireEvent.click(dropdown);
+
+  const ausElem = getByText("Australia");
+  expect(ausElem).toBeTruthy();
+
+  fireEvent.click(ausElem);
+
+  const nswElem = getByText("New South Wales");
+  expect(nswElem).toBeTruthy();
+
+  fireEvent.click(nswElem);
+
+  const sydElem = getByText("Sydney");
+  expect(sydElem).toBeTruthy();
+
+  const pausElem = getByText("Australia");
+  expect(pausElem).toBeTruthy();
+
+  fireEvent.click(pausElem);
+
+  const canElem = getByText("Canada");
+  expect(canElem).toBeTruthy();
+
+  fireEvent.click(canElem);
+
+  const alElem = getByText("Alberta");
+  expect(alElem).toBeTruthy();
+
+  fireEvent.click(alElem);
+
+  const calElem = getByText("Calgary");
+  expect(calElem).toBeTruthy();
+
+  fireEvent.click(calElem);
+
+  const text = getByText("Canada | Alberta | Calgary");
+  expect(text).toBeTruthy();
+});
+
+it("verify search", done => {
+  const { getByText, getByTestId, container } = render(
+    <PickerCascader data={pcData} onValueSelected={() => done()} />
+  );
+
+  const dropdown = container.querySelector(".pc-text-panel");
+  fireEvent.click(dropdown);
+
+  const searchElem = getByTestId("pc-search-field");
+  fireEvent.change(searchElem, { target: { value: "sydney" } });
+
+  const text = getByText("Australia | New South Wales | Sydney");
+  expect(text).toBeTruthy();
+
+  fireEvent.click(text);
 });
