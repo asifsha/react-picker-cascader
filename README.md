@@ -1,6 +1,6 @@
-# react-picker-cascader
+# react-picker-cascader / multilevel-dropdown
 
-React Picker Cascader Dropdown
+React Picker Cascader / Multilevel  Dropdown
 
 ## Installation
 
